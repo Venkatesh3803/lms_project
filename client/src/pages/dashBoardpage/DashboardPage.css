@@ -1,0 +1,14 @@
+.dashboard-bottom {
+    display: flex;
+}
+
+.dash-sidebar {
+    flex: 0.8;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.dash-content {
+    flex: 3;
+    display: flex;
+}

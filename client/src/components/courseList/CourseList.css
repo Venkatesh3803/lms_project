@@ -1,0 +1,32 @@
+.course-list {
+    width: 75%;
+    padding: 2rem;
+}
+
+.course-list-slidebar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.course-list>h1 {
+    text-align: center;
+    padding: 1rem;
+    font-size: 35px;
+}
+
+.course-list>p {
+    text-align: center;
+    padding: 1rem;
+    width: 70%;
+    margin: auto;
+    color: gray;
+    font-size: 18px;
+}
+
+.card-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}

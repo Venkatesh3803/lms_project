@@ -1,0 +1,75 @@
+.sidebar {
+    background-color: aliceblue;
+    width: 300px;
+    height: 80vh;
+    position: sticky;
+    top: 68px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.search-bar {
+    margin: 0 1rem;
+    display: flex;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+}
+
+.search-bar :focus {
+    outline: none;
+}
+
+.search-icon {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-items{
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.active {
+    background-color: blue;
+    color: white;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+   
+}
+
+.list-items:hover {
+    background-color: rgb(229, 229, 233);
+    color: black;
+}
+
+.list-items div, .active div {
+    display: flex;
+    gap: 0.5rem;
+}

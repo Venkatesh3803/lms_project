@@ -1,0 +1,51 @@
+.banner {
+    background-image: url("../../images/banner.png");
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-container {
+    position: absolute;
+    bottom: 10rem;
+    left: 5rem;
+}
+
+.banner-container h1 {
+    color: white;
+    font-size: 35px;
+    margin-bottom: 1rem;
+}
+
+.suscribe {
+    display: flex;
+    border: 1px solid rgb(249, 247, 247);
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    border-radius: 8px;
+}
+
+.suscribe input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.suscribe input:focus {
+    outline: none;
+}
+
+.suscribe input::placeholder {
+    color: white;
+}
+
+.suscribe button {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+}

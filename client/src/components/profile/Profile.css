@@ -1,0 +1,51 @@
+.profile {
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-items {
+    display: flex;
+    gap: 2rem;
+}
+
+.profile-edit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.profile-items img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.profile-items input{
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+
+.profile button{
+    padding: 0.5rem;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: blue;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    width: 30%;
+    cursor: pointer;
+}

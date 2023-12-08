@@ -1,0 +1,272 @@
+.course-form {
+    padding: 1.5rem;
+    width: 50%;
+    margin: auto;
+}
+
+.course-infromation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.inputs input,
+select,
+textarea {
+    padding: 0.8rem;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.inputs select {
+    font-size: 16px;
+    color: gray;
+}
+
+.inputs .options {
+    padding: 15rem;
+}
+
+.inputs input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.course-setting {
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+}
+
+.course-settting-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-settting-list p {
+    color: gray;
+}
+
+.course-price,
+.form-course-outline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+}
+
+.course-price>div {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.radio-buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.additional-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+}
+
+.duration {
+    display: flex;
+    gap: 1.5rem;
+}
+
+input:only-of-type(.radio) {
+    width: 50px;
+    height: 50px;
+}
+
+.form-course-outline button {
+    padding: 0.8rem 3rem;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: rgb(68, 85, 244);
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.form-outline {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+
+}
+
+.ouline-container {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    overflow-y: scroll;
+    gap: 1rem;
+    position: relative;
+    padding: 2.5rem 1.5rem;
+    background-color: white;
+    width: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(127, 126, 126, 0.75);
+}
+
+
+.ouline-container button {
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.cancel {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(68, 85, 244);
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.module {
+    padding: 1rem;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.module-top {
+    /* background-color: rgb(240, 235, 235); */
+    padding:0.5rem;
+    border: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.module button {
+    padding: 0.5rem 1.5rem;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: rgb(68, 85, 244);
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.lessons p {
+    border-bottom: 1px solid gray;
+    padding-bottom: 0.3rem;
+}
+
+.lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+}
+
+.lessons {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.lessons ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rebeccapurple;
+}
+
+.lessons ul:last-child {
+    border-bottom: none;
+}
+
+.btns button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: rgb(68, 85, 244);
+    color: white;
+    font-weight: 600;
+    font-weight: 16px;
+}

@@ -1,0 +1,41 @@
+.career-path {
+    background-color: aliceblue;
+    margin: 2rem 0;
+    padding: 2rem 0;
+}
+
+.career-container {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.career-card {
+    width: 100%;
+    display: flex;
+    border: 1px solid gray;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.career-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+}
+
+
+
+.career-right {
+    flex: 1;
+}
+
+.career-right img {
+    width: 100%;
+}

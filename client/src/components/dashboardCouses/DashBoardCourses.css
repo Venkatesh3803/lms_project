@@ -1,0 +1,26 @@
+.dash-courses {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background-color: rgb(243, 241, 241);
+}
+
+.dash-course-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filters{
+    display: flex;
+    gap: 3rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid gray;
+}
+
+.filters p{
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+}

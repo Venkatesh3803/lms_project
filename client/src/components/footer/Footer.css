@@ -1,0 +1,72 @@
+footer {
+    background-color: black;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    width: 85%;
+    margin: auto;
+}
+
+.footer-left {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.footer-left h2 {
+    font-size: 35px;
+}
+
+.footer-left input {
+    border: 1px solid white;
+    padding: 0.6rem;
+    background-color: transparent;
+    color: white;
+}
+
+.footer-left p {
+    font-size: 18px;
+}
+
+.footer-left ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-left ul li {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.footer-right {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-list ul li {
+    cursor: pointer;
+}
+
+footer>span {
+    text-align: center;
+}
