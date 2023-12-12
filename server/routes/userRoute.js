@@ -1,5 +1,5 @@
 import express from "express"
-// import { deleteUser, getSingleUser, updateUser } from "../controllers/userController.js"
+import { deleteUser, getSingleUser, updateUser } from "../controllers/userController.js"
 import {  verifyTokenAndAuthorization } from "../middleware/verifyJwt.js"
 const route = express.Router()
 
