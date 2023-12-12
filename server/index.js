@@ -2,7 +2,7 @@ import express from "express"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
 import AuthRoute from "./routes/authRoute.js"
-import UserRoute from "./routes/userRoute.js"
+// import UserRoute from "./routes/userRoute.js"
 import CourseRoute from "./routes/courseRoute.js"
 import cors from "cors"
 // configrations
@@ -24,6 +24,10 @@ const connectDb = () => {
 }
 
 
+app.get('/', (req, res) => {
+    res.send('Well Come to Path in backend!')
+})
+
 
 // starting server
 app.listen(port, () => {
@@ -33,5 +37,5 @@ app.listen(port, () => {
 
 // routes
 app.use("/api/auth", AuthRoute)
-app.use("/api/user", UserRoute)
+// app.use("/api/user", UserRoute)
 app.use("/api/course", CourseRoute)
