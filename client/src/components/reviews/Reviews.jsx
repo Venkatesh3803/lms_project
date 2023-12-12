@@ -6,15 +6,19 @@ import { TiTick } from "react-icons/ti";
 import { postReview } from "../../requestmethods/courseRequest";
 import { AuthContext } from "../../Context/Context";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
-const Reviews = ({ data, totalRating }) => {
+const Reviews = ({ data, studArry, totalRating }) => {
   const { currentUser } = useContext(AuthContext);
   const { id } = useParams()
 
+  const [review, setReview] = useState(data)
+
   const [writeReview, setWriteReview] = useState(false);
-  const [review, setreview] = useState("");
+  const [text, setText] = useState("");
   const [rating, setRating] = useState(0);
+
   const handleStarClick = (selectedRating) => {
     setRating(selectedRating)
   }
@@ -23,13 +27,19 @@ const Reviews = ({ data, totalRating }) => {
   const handleReview = (id) => {
     let reviewData = {
       userName: currentUser.firstname,
-      review: review,
+      review: text,
       rating: rating
     }
+
+    if (!studArry.includes(currentUser._id)) return toast.warn("Sorry! You are not allowed to review this Course since you haven't Enrolled .")
+
     postReview(id, reviewData);
     setRating(0);
-    setreview("")
+    setText("")
+
+    setReview((prev) => [...prev, reviewData])
   }
+
 
   return (
     <div className='review'>
@@ -41,38 +51,48 @@ const Reviews = ({ data, totalRating }) => {
         <h1>{data.length} Reviews</h1>
         <span>Over all rating</span>
         <div className="rating">
-          {totalRating.toString().slice(0, 3)}  <AiFillStar className="star-icon" />
+          <h2>{totalRating.toString().slice(0, 3)}</h2>   <AiFillStar className="star-icon" />
         </div>
-
+        <hr />
         <div className="rating-bars">
           <span>5</span>
-          <AiFillStar />
-          <div className="progress"></div>
-          <span>54</span>
+          <AiFillStar className="star-icon" />
+          <div className="progress" >
+            <div className="percent" style={{ width: `${((data.filter((r) => r.rating === 5).length) / data.length) * 100}%` }}></div>
+          </div>
+          <span>{(data.filter((r) => r.rating === 5).length)}</span>
         </div>
         <div className="rating-bars">
           <span>4</span>
-          <AiFillStar />
-          <div className="progress"></div>
-          <span>54</span>
+          <AiFillStar className="star-icon" />
+          <div className="progress" >
+            <div className="percent" style={{ width: `${((data.filter((r) => r.rating === 4).length) / data.length) * 100}%` }}></div>
+          </div>
+          <span>{(data.filter((r) => r.rating === 4).length)}</span>
         </div>
         <div className="rating-bars">
           <span>3</span>
-          <AiFillStar />
-          <div className="progress"></div>
-          <span>54</span>
+          <AiFillStar className="star-icon" />
+          <div className="progress" >
+            <div className="percent" style={{ width: `${((data.filter((r) => r.rating === 3).length) / data.length) * 100}%` }}></div>
+          </div>
+          <span>{(data.filter((r) => r.rating === 3).length)}</span>
         </div>
         <div className="rating-bars">
           <span>2</span>
-          <AiFillStar />
-          <div className="progress"></div>
-          <span>54</span>
+          <AiFillStar className="star-icon" />
+          <div className="progress" >
+            <div className="percent" style={{ width: `${((data.filter((r) => r.rating === 2).length) / data.length) * 100}%` }}></div>
+          </div>
+          <span>{(data.filter((r) => r.rating === 2).length)}</span>
         </div>
         <div className="rating-bars">
           <span>1</span>
-          <AiFillStar />
-          <div className="progress"></div>
-          <span>54</span>
+          <AiFillStar className="star-icon" />
+          <div className="progress" >
+            <div className="percent" style={{ width: `${((data.filter((r) => r.rating === 1).length) / data.length) * 100}%` }}></div>
+          </div>
+          <span>{(data.filter((r) => r.rating === 1).length)}</span>
         </div>
         <button onClick={() => setWriteReview(true)}>Write Review</button>
       </div>
@@ -98,7 +118,7 @@ const Reviews = ({ data, totalRating }) => {
           <div className="review-form-button">
             <h3 >Review this Course</h3>
             <div className="stars">
-              <textarea name="" id="" rows="8" placeholder="Review Discription" onChange={(e) => setreview(e.target.value)}></textarea>
+              <textarea name="" id="" rows="8" placeholder="Review Discription" onChange={(e) => setText(e.target.value)}></textarea>
             </div>
             <button onClick={() => handleReview(id)}>Submit</button>
           </div>
@@ -108,7 +128,7 @@ const Reviews = ({ data, totalRating }) => {
       }
 
       <div className="reviews-list">
-        {data.map((r) => {
+        {review.map((r) => {
           return (
             <div className="reviews">
               <div className="reviews-stars">

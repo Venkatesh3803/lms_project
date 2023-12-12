@@ -1,8 +1,11 @@
+import { useContext } from "react"
 import "./CourseCard.css"
 import { AiFillStar } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../../Context/Context"
 
 const CourseCard = ({ data }) => {
+    const { currentUser } = useContext(AuthContext)
     return (
         <div className='course-card' >
             <div className="card-top">
@@ -14,13 +17,9 @@ const CourseCard = ({ data }) => {
             <div className="card-bottom">
                 <div className="rating">
                     <div className="starts">
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
-                        <AiFillStar />
+                        <AiFillStar className="star-icon" />
                     </div>
-                    <p>5.5<span>(2)</span></p>
+                    <p>{data.totalRating.toString().slice(0, 3)}<span>({data.reviews.length})</span></p>
                 </div>
                 <Link to={`/course/${data._id}`}>
 
@@ -30,7 +29,16 @@ const CourseCard = ({ data }) => {
                 <hr />
                 <div className="price">
                     <span>₹{data?.discountedPrice || "Free"}</span>
-                    <button>Add to cart</button>
+                    {
+                        data.students?.includes(currentUser?._id) ?
+                            <Link to={`/learning/${data._id}`}>
+                                <button >Continue Learning</button>
+                            </Link>
+                            :
+                            <Link to={`/course/${data._id}`}>
+                                <button>Enroll For ₹{data.discountedPrice ? data.discountedPrice : enrolled}</button>
+                            </Link>
+                    }
                 </div>
             </div>
         </div>

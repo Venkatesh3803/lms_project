@@ -4,7 +4,7 @@ import HomePage from "./pages/homePage/HomePage"
 import CoursePage from "./pages/coursePage/CoursePage"
 import Courses from "./pages/courses/Courses"
 import DashboardPage from "./pages/dashBoardpage/DashboardPage"
-import ProfilePage from "./pages/profilePage/profilePage"
+// import ProfilePage from "./pages/profilePage/profilePage"
 import EnrolledCourses from "./pages/enrolledpage/EnrolledCourses"
 import WishListPage from "./pages/wishList/WishListPage"
 import AddCoursePage from "./pages/addCoursePage/AddCoursePage"
@@ -33,7 +33,7 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/learning/:id" element={!currentUser ? <Navigate to="/login" /> : <LearningPage />} />
-        <Route path="/dashboard/profile" element={!currentUser ? <Navigate to="/login" /> : <ProfilePage />} />
+        {/* <Route path="/dashboard/profile" element={!currentUser ? <Navigate to="/login" /> : <ProfilePage />} /> */}
         <Route path="/dashboard/courses" element={!currentUser ? <Navigate to="/login" /> : <EnrolledCourses />} />
         <Route path="/dashboard/wishlist" element={!currentUser ? <Navigate to="/login" /> : <WishListPage />} />
         <Route path="/dashboard/reviews" element={!currentUser ? <Navigate to="/login" /> : <DashboardPage />} />

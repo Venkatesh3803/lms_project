@@ -43,7 +43,6 @@ const courseSchema = new mongoose.Schema({
         {
             userName: {
                 type: String,
-
             },
             review: {
                 type: String,

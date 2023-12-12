@@ -20,9 +20,9 @@ export const addCourseRequest = async (formData) => {
     }
 }
 
-export const fetchingCourses = async () => {
+export const fetchingCourses = async (search, category) => {
     try {
-        const res = await api.get("/course");
+        const res = await api.get(`/course?search=${search}&category=${category}`);
         return res.data
     } catch (error) {
         return error.message

@@ -23,10 +23,12 @@ const connectDb = () => {
     }
 }
 
+
+
 // starting server
 app.listen(port, () => {
     connectDb()
-    console.log(`app is listenind at ${port}`)
+    console.log(`app is listening at ${port}`)
 })
 
 // routes

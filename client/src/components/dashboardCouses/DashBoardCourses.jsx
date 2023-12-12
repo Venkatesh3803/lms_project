@@ -7,13 +7,15 @@ import emptyImg from "../../images/emptystate.svg"
 
 const DashBoardCourses = ({ enrolled, wishList }) => {
     const [data, setData] = useState([])
-    const { currentUser } = useContext(AuthContext)
+    const { currentUser } = useContext(AuthContext);
+    const [search, setSearch] = useState("")
+    const [category, setCategory] = useState("")
 
     useEffect(() => {
         {
             enrolled ? fetchingEnrolledCourses(currentUser?._id).then((data) => {
                 setData(data)
-            }) : fetchingCourses().then(data => {
+            }) : fetchingCourses(search, category).then(data => {
                 setData(data)
             })
         }

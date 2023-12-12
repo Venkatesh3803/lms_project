@@ -91,7 +91,16 @@ const Course = () => {
                                     <span>{data.level}</span>
                                 </div>
                             </div>
-                            <button >Enrol For Free</button>
+                            <div>
+                                    {
+                                        data.students?.includes(currentUser?._id) ?
+                                            <Link to={`/learning/${data._id}`}>
+                                                <button >Continue Learning</button>
+                                            </Link>
+                                            :
+                                            <button onClick={() => handleEnroll(data._id)}>Enroll For ₹{data.discountedPrice ? data.discountedPrice : enrolled}</button>
+                                    }
+                                </div>
                         </div>
                         <img src={data.thumbNail ? data.thumbNail : "https://www.gasso.com/wp-content/uploads/2017/04/noimage.jpg"} alt="" />
 
@@ -156,7 +165,7 @@ const Course = () => {
                                 </div>
                             </>
                             :
-                            <Reviews data={data.reviews} totalRating={data.totalRating} />
+                            <Reviews data={data.reviews} studArry = {data.stude} totalRating={data.totalRating} />
                         }
 
 

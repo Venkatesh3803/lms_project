@@ -8,7 +8,7 @@ import { AuthContext } from "../../Context/Context";
 const Navber = () => {
     const { currentUser } = useContext(AuthContext)
     const [menuList, setMenuList] = useState(false)
-// console.log(window.location.pathname)
+
     return (
         <nav>
             <div className="nav-container">
@@ -34,8 +34,9 @@ const Navber = () => {
                 <div className="nav-right">
                     {currentUser ?
                         <>
+                        <p>{currentUser.firstname}</p>
                             <div className="user" onMouseEnter={() => setMenuList(true)}>
-                                v
+                                {currentUser.firstname.slice(0, 1)}
                             </div>
                         </>
                         :

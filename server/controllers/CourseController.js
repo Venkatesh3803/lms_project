@@ -12,8 +12,19 @@ export const createCoures = async (req, res) => {
 }
 
 export const getCoures = async (req, res) => {
+    const search = req.query.search;
+    const category = req.query.category;
+
     try {
-        const course = await CourseModel.find()
+
+        let course;
+        if (search) {
+            course = await CourseModel.find({ title: { $regex: search, $options: 'i' } })
+        } else if (category) {
+            course = await CourseModel.find({ category: category })
+        } else {
+            course = await CourseModel.find()
+        }
         res.status(200).json(course)
     } catch (error) {
         res.status(500).json(error.message)
@@ -72,11 +83,11 @@ export const deleteCourses = async (req, res) => {
 
 export const writeReview = async (req, res) => {
 
-    const { userId, review, rating } = req.body;
+    const { userName, review, rating } = req.body;
     try {
         const course = await CourseModel.findById(req.params.id);
         if (!course) return res.status(401).json("Course not Found")
-        await course.updateOne({ $push: { reviews: { userId, review, rating } } })
+        await course.updateOne({ $push: { reviews: { userName, review, rating } } })
 
         const calRating = course.reviews.reduce((sum, review) => sum + review.rating, 0);
 

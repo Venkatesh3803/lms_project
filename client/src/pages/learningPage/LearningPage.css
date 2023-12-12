@@ -1,3 +1,67 @@
-.learning{
-    height: 100vh;
+.learning {
+    /* height: 100vh; */
+    padding: 2rem;
+}
+
+.learning-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.learning-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+.learning-right {
+    background-color: rgb(243, 242, 241);
+    overflow: hidden;
+    border: 1px solid rgb(211, 209, 209);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.learning-header {
+    background-color: rgb(20, 20, 181);
+    height: 10vh;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-weight: 500;
+}
+
+.module-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.learning-right {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+
+.learning-module-list {
+    padding: 1rem 0.5rem;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+
+
+@media screen and (max-width : 900px) {
+    .learning {
+        height: auto;
+    }
+
+    .learning-container {
+        flex-direction: column;
+    }
 }
