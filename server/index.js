@@ -2,7 +2,7 @@ import express from "express"
 import mongoose from "mongoose";
 import dotenv from "dotenv"
 import AuthRoute from "./routes/authRoute.js"
-// import UserRoute from "./routes/userRoute.js"
+import UserRoute from "./routes/userRoute.js"
 import CourseRoute from "./routes/courseRoute.js"
 import cors from "cors"
 // configrations
@@ -37,5 +37,5 @@ app.listen(port, () => {
 
 // routes
 app.use("/api/auth", AuthRoute)
-// app.use("/api/user", UserRoute)
+app.use("/api/user", UserRoute)
 app.use("/api/course", CourseRoute)

@@ -4,7 +4,7 @@ import axios from "axios"
 import { toast } from "react-toastify"
 
 export const api = axios.create({
-    baseURL: "http://localhost:5000/api"
+    baseURL: "https://learningmanagement-backend.onrender.com/api"
 })
 
 
