@@ -28,13 +28,15 @@ const Navber = () => {
                         <Link to={"/courses"} style={{ color: "white" }}>
                             <li>Course List</li>
                         </Link>
-                        <li>Contact Us</li>
+                        <Link to={"/contactus"} style={{ color: "white" }}>
+                            <li>Contact Us</li>
+                        </Link>
                     </ul>
                 </div>
                 <div className="nav-right">
                     {currentUser ?
                         <>
-                        <p>{currentUser.firstname}</p>
+                            <p>{currentUser.firstname}</p>
                             <div className="user" onMouseEnter={() => setMenuList(true)}>
                                 {currentUser.firstname.slice(0, 1)}
                             </div>

@@ -1,6 +1,7 @@
 import express from "express"
-import { deleteUser, getSingleUser, updateUser } from "../controllers/userController.js"
+
 import {  verifyTokenAndAuthorization } from "../middleware/verifyJwt.js"
+import { deleteUser, getSingleUser, updateUser } from "../controllers/UserController.js"
 const route = express.Router()
 
 route.get("/:id", getSingleUser)

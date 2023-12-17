@@ -71,7 +71,7 @@ const Course = () => {
                 <div className="course-container">
                     <div className="course-left">
                         <div className="course-top">
-                            {data.userId === currentUser._id &&
+                            {data.userId === currentUser?._id &&
                                 <MdDeleteSweep className="delete" onClick={() => handleDelete(data._id)} />
                             }
 
@@ -165,7 +165,7 @@ const Course = () => {
                                 </div>
                             </>
                             :
-                            <Reviews data={data.reviews} studArry = {data.stude} totalRating={data.totalRating} />
+                            <Reviews data={data.reviews} studArry = {data.students} totalRating={data.totalRating} />
                         }
 
 

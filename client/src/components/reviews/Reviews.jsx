@@ -23,6 +23,7 @@ const Reviews = ({ data, studArry, totalRating }) => {
     setRating(selectedRating)
   }
 
+  console.log(studArry)
 
   const handleReview = (id) => {
     let reviewData = {
@@ -31,7 +32,9 @@ const Reviews = ({ data, studArry, totalRating }) => {
       rating: rating
     }
 
-    if (!studArry.includes(currentUser._id)) return toast.warn("Sorry! You are not allowed to review this Course since you haven't Enrolled .")
+    if(!currentUser) return toast.warn("Please Login to Review The Course")
+
+    if (!studArry.includes(currentUser._id)) return toast.warn("Sorry! You are not allowed to review this Course since you haven't Enrolled.")
 
     postReview(id, reviewData);
     setRating(0);

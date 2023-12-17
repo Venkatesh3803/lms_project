@@ -35,8 +35,8 @@ const CourseCard = ({ data }) => {
                                 <button >Continue Learning</button>
                             </Link>
                             :
-                            <Link to={`/course/${data._id}`}>
-                                <button>Enroll For ₹{data.discountedPrice ? data.discountedPrice : enrolled}</button>
+                            <Link to={`/course/${data?._id}`}>
+                                <button>Enroll For ₹{data.discountedPrice ? data.discountedPrice : "enrolled"}</button>
                             </Link>
                     }
                 </div>
