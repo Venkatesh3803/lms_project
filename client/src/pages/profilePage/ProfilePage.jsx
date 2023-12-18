@@ -9,7 +9,6 @@ import Profile from '../../components/profile/Profile'
 const ProfilePage = () => {
   return (
     <div>
-
       <Navber />
       <main className="dashboard-page">
         <DashboardTop />

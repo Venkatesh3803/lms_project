@@ -4,7 +4,6 @@ import HomePage from "./pages/homePage/HomePage"
 import CoursePage from "./pages/coursePage/CoursePage"
 import Courses from "./pages/courses/Courses"
 import DashboardPage from "./pages/dashBoardpage/DashboardPage"
-import ProfilePage from "./pages/profilePage/profilePage"
 import EnrolledCourses from "./pages/enrolledpage/EnrolledCourses"
 import WishListPage from "./pages/wishList/WishListPage"
 import AddCoursePage from "./pages/addCoursePage/AddCoursePage"
@@ -19,6 +18,7 @@ import { useContext } from "react"
 import { AuthContext } from "./Context/Context"
 import LearningPage from "./pages/learningPage/LearningPage"
 import ContactUs from "./pages/constactUs/ContactUs"
+import ProfilePage from "./pages/profilePage/profilePage"
 
 
 function App() {
