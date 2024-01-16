@@ -20,7 +20,7 @@ import LearningPage from "./pages/learningPage/LearningPage"
 import ContactUs from "./pages/constactUs/ContactUs"
 
 import EditPage from "./pages/editPage/EditPage"
-import ProfilePage from "./pages/profilePage/profilePage"
+// import ProfilePage from "./pages/profilePage/profilePage"
 
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
         <Route path="/editpage/:id" element={<EditPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/learning/:id" element={!currentUser ? <Navigate to="/login" /> : <LearningPage />} />
-        <Route path="/dashboard/profile" element={!currentUser ? <Navigate to="/login" /> : <ProfilePage />} />
+        {/* <Route path="/dashboard/profile" element={!currentUser ? <Navigate to="/login" /> : <ProfilePage />} /> */}
         <Route path="/dashboard/courses" element={!currentUser ? <Navigate to="/login" /> : <EnrolledCourses />} />
         <Route path="/dashboard/wishlist" element={!currentUser ? <Navigate to="/login" /> : <WishListPage />} />
         <Route path="/dashboard/reviews" element={!currentUser ? <Navigate to="/login" /> : <DashboardPage />} />
