@@ -11,6 +11,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Spinner from "../spinner/spinner";
 import { AuthContext } from "../../Context/Context";
 import { MdDeleteSweep } from "react-icons/md";
+import { AiOutlineEdit } from "react-icons/ai";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
@@ -32,6 +33,10 @@ const Course = () => {
         })
 
     }, [id])
+
+    const handleToggle = () =>{
+        setOutlineAns(!outlineAns)
+    }
 
 
     const handleEnroll = (id) => {
@@ -72,7 +77,12 @@ const Course = () => {
                     <div className="course-left">
                         <div className="course-top">
                             {data.userId === currentUser?._id &&
-                                <MdDeleteSweep className="delete" onClick={() => handleDelete(data._id)} />
+                                <>
+                                    <Link to={`/editpage/${data._id}`}>
+                                        <AiOutlineEdit className="edit" />
+                                    </Link>
+                                    <MdDeleteSweep className="delete" onClick={() => handleDelete(data._id)} />
+                                </>
                             }
 
                             <h2>{data?.title}</h2>
@@ -92,15 +102,15 @@ const Course = () => {
                                 </div>
                             </div>
                             <div>
-                                    {
-                                        data.students?.includes(currentUser?._id) ?
-                                            <Link to={`/learning/${data._id}`}>
-                                                <button >Continue Learning</button>
-                                            </Link>
-                                            :
-                                            <button onClick={() => handleEnroll(data._id)}>Enroll For ₹{data.discountedPrice ? data.discountedPrice : enrolled}</button>
-                                    }
-                                </div>
+                                {
+                                    data.students?.includes(currentUser?._id) ?
+                                        <Link to={`/learning/${data._id}`}>
+                                            <button >Continue Learning</button>
+                                        </Link>
+                                        :
+                                        <button onClick={() => handleEnroll(data._id)}>Enroll For {data.discountedPrice ? data.discountedPrice : enrolled}</button>
+                                }
+                            </div>
                         </div>
                         <img src={data.thumbNail ? data.thumbNail : "https://www.gasso.com/wp-content/uploads/2017/04/noimage.jpg"} alt="" />
 
@@ -139,9 +149,9 @@ const Course = () => {
                                                     <div className="outine-heading">
                                                         <h5>{m.module}</h5>
                                                         {!outlineAns ?
-                                                            <AiOutlinePlus onClick={() => setOutlineAns(true)} className="icon" />
+                                                            <AiOutlinePlus onClick={handleToggle} className="icon" />
                                                             :
-                                                            <AiOutlineMinus onClick={() => setOutlineAns(false)} className="icon" />
+                                                            <AiOutlineMinus onClick={handleToggle} className="icon" />
                                                         }
                                                     </div>
                                                     {outlineAns &&
@@ -165,7 +175,7 @@ const Course = () => {
                                 </div>
                             </>
                             :
-                            <Reviews data={data.reviews} studArry = {data.students} totalRating={data.totalRating} />
+                            <Reviews data={data.reviews} studArry={data.students} totalRating={data.totalRating} />
                         }
 
 
@@ -200,18 +210,18 @@ const Course = () => {
                             </div>
 
 
-                    
-                                <div>
-                                    {
-                                        data.students?.includes(currentUser?._id) ?
-                                            <Link to={`/learning/${data._id}`}>
-                                                <button >Continue Learning</button>
-                                            </Link>
-                                            :
-                                            <button onClick={() => handleEnroll(data._id)}>Enroll For ₹{data.discountedPrice ? data.discountedPrice : enrolled}</button>
-                                    }
-                                </div>
-                            
+
+                            <div>
+                                {
+                                    data.students?.includes(currentUser?._id) ?
+                                        <Link to={`/learning/${data._id}`}>
+                                            <button >Continue Learning</button>
+                                        </Link>
+                                        :
+                                        <button onClick={() => handleEnroll(data._id)}>Enroll For {data.discountedPrice ?  data.discountedPrice : enrolled}</button>
+                                }
+                            </div>
+
                         </div>
                     </div>
                 </div>

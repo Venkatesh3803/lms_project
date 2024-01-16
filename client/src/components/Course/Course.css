@@ -181,3 +181,11 @@
     right: 0;
     color: red;
 }
+.edit{
+    position: absolute;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    right: 40px;
+    color: rgb(7, 116, 7);
+}

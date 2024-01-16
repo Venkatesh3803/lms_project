@@ -36,6 +36,7 @@
 .card-bottom {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.8rem;
     padding: 0.5rem 1rem;
 }

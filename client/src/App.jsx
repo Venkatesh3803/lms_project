@@ -18,6 +18,8 @@ import { useContext } from "react"
 import { AuthContext } from "./Context/Context"
 import LearningPage from "./pages/learningPage/LearningPage"
 import ContactUs from "./pages/constactUs/ContactUs"
+
+import EditPage from "./pages/editPage/EditPage"
 import ProfilePage from "./pages/profilePage/profilePage"
 
 
@@ -33,6 +35,7 @@ function App() {
         <Route path="/course/:id" element={<CoursePage />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/editpage/:id" element={<EditPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/learning/:id" element={!currentUser ? <Navigate to="/login" /> : <LearningPage />} />
         <Route path="/dashboard/profile" element={!currentUser ? <Navigate to="/login" /> : <ProfilePage />} />

@@ -63,17 +63,20 @@ const DashBoardSideBar = () => {
         {
             id: 1,
             name: "Courses",
-            icon: <BiSolidGraduation />
+            icon: <BiSolidGraduation />,
+            link: "/dashboard"
         },
         {
             id: 2,
             name: "Annoucment",
-            icon: <GrAnnounce />
+            icon: <GrAnnounce />,
+            link: "/dashboard/courses"
         },
         {
             id: 3,
             name: "Settings",
-            icon: <AiFillSetting />
+            icon: <AiFillSetting />,
+            link: "/dashboard/profile"
         },
 
 
@@ -101,16 +104,18 @@ const DashBoardSideBar = () => {
             {currentUser.isInstructor &&
                 <div className="sidebar-list">
                     <h3>Instructor</h3>
-
                     {list2.map((li) => {
                         return (
-                            <div className="list-items" key={li.id}>
-                                <div className="">
-                                    {li.icon}
-                                    {li.name}
+                            <Link to={`${li.link}`}>
+
+                                <div className="list-items" key={li.id}>
+                                    <div className="">
+                                        {li.icon}
+                                        {li.name}
+                                    </div>
+                                    <IoIosArrowForward />
                                 </div>
-                                <IoIosArrowForward />
-                            </div>
+                            </Link>
                         )
                     })}
                 </div>
